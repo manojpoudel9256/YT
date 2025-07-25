@@ -1,1 +1,177 @@
-<p>Hello World</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life in Japan from a Nepali Perspective</title>
+  <link href="/dist/output.css" rel="stylesheet">
+  <script>
+    // Light/Dark mode toggle
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
+  <nav class="flex justify-between items-center px-6 py-4 shadow-md bg-white dark:bg-gray-800 rounded-b-2xl">
+    <div class="flex items-center gap-3">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="w-12 h-12 rounded-full shadow-md">
+      <span class="font-bold text-xl tracking-tight">Nepali in Japan</span>
+    </div>
+    <div class="flex gap-6 text-lg">
+      <a href="#home" class="hover:text-blue-500">Home</a>
+      <a href="#about" class="hover:text-blue-500">About Me</a>
+      <a href="#videos" class="hover:text-blue-500">Top Videos</a>
+      <a href="#stats" class="hover:text-blue-500">Channel Stats</a>
+      <a href="#gear" class="hover:text-blue-500">Gear I Use</a>
+      <a href="#contact" class="hover:text-blue-500">Contact</a>
+    </div>
+    <button id="theme-toggle" class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+      <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 6.66l-.71-.71M4.05 4.05l-.71-.71M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    </button>
+  </nav>
+  <main class="max-w-3xl mx-auto p-6 mt-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
+    <!-- Home Section -->
+    <section id="home" class="mb-12 text-center">
+      <h1 class="text-4xl font-extrabold mb-2">Life in Japan from a Nepali Perspective</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300">Welcome to my journey as a Nepali YouTuber and vlogger living in Japan. Sharing stories, culture, and adventures!</p>
+    </section>
+    <!-- About Me Section -->
+    <section id="about" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4 flex items-center gap-2"><span>About Me</span></h2>
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="w-32 h-32 rounded-full shadow-lg">
+        <div>
+          <p class="mb-2">Namaste! I'm <span class="font-semibold">[Your Name]</span>, a Nepali vlogger based in Japan. I create content about daily life, travel, food, and the unique experiences of a Nepali living abroad.</p>
+          <p class="text-gray-600 dark:text-gray-400">Follow my journey as I explore Japanese culture, share tips for Nepalis in Japan, and connect with viewers around the world.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Top Videos Section -->
+    <section id="videos" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4 flex items-center gap-2"><span>Top Videos</span></h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID1" target="_blank" class="block bg-gray-100 dark:bg-gray-700 rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+          <img src="https://img.youtube.com/vi/VIDEO_ID1/hqdefault.jpg" alt="Video 1" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <div class="font-semibold text-lg mb-1">Exploring Tokyo as a Nepali</div>
+            <div class="text-gray-500 dark:text-gray-400 text-sm">A day in Tokyo from my perspective!</div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID2" target="_blank" class="block bg-gray-100 dark:bg-gray-700 rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+          <img src="https://img.youtube.com/vi/VIDEO_ID2/hqdefault.jpg" alt="Video 2" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <div class="font-semibold text-lg mb-1">Japanese Food Challenge</div>
+            <div class="text-gray-500 dark:text-gray-400 text-sm">Trying new Japanese dishes!</div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID3" target="_blank" class="block bg-gray-100 dark:bg-gray-700 rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+          <img src="https://img.youtube.com/vi/VIDEO_ID3/hqdefault.jpg" alt="Video 3" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <div class="font-semibold text-lg mb-1">Nepali Festival in Japan</div>
+            <div class="text-gray-500 dark:text-gray-400 text-sm">Celebrating culture abroad.</div>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID4" target="_blank" class="block bg-gray-100 dark:bg-gray-700 rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+          <img src="https://img.youtube.com/vi/VIDEO_ID4/hqdefault.jpg" alt="Video 4" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <div class="font-semibold text-lg mb-1">Life as a Student in Japan</div>
+            <div class="text-gray-500 dark:text-gray-400 text-sm">My study and work routine.</div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- Channel Stats Section -->
+    <section id="stats" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4 flex items-center gap-2"><span>Channel Stats</span></h2>
+      <div class="flex flex-col md:flex-row gap-8 justify-between items-center">
+        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-700 rounded-xl p-6 shadow w-full md:w-1/3 mb-4 md:mb-0">
+          <span class="text-3xl font-bold">123K</span>
+          <span class="text-gray-500 dark:text-gray-400">Subscribers</span>
+        </div>
+        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-700 rounded-xl p-6 shadow w-full md:w-1/3 mb-4 md:mb-0">
+          <span class="text-3xl font-bold">8.9M</span>
+          <span class="text-gray-500 dark:text-gray-400">Total Views</span>
+        </div>
+        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-700 rounded-xl p-6 shadow w-full md:w-1/3">
+          <span class="text-3xl font-bold">21,000</span>
+          <span class="text-gray-500 dark:text-gray-400">Watch Hours</span>
+        </div>
+      </div>
+    </section>
+    <!-- Gear I Use Section -->
+    <section id="gear" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4 flex items-center gap-2"><span>Gear I Use</span></h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <li class="bg-gray-100 dark:bg-gray-700 rounded-xl shadow p-4 flex items-center gap-4">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=80&q=80" alt="Camera" class="w-16 h-16 rounded-lg object-cover">
+          <div>
+            <div class="font-semibold">Sony ZV-1</div>
+            <div class="text-gray-500 dark:text-gray-400 text-sm">Main vlogging camera</div>
+          </div>
+        </li>
+        <li class="bg-gray-100 dark:bg-gray-700 rounded-xl shadow p-4 flex items-center gap-4">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=80&q=80" alt="Microphone" class="w-16 h-16 rounded-lg object-cover">
+          <div>
+            <div class="font-semibold">Rode VideoMicro</div>
+            <div class="text-gray-500 dark:text-gray-400 text-sm">Compact shotgun mic</div>
+          </div>
+        </li>
+        <li class="bg-gray-100 dark:bg-gray-700 rounded-xl shadow p-4 flex items-center gap-4">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=80&q=80" alt="Tripod" class="w-16 h-16 rounded-lg object-cover">
+          <div>
+            <div class="font-semibold">Joby GorillaPod</div>
+            <div class="text-gray-500 dark:text-gray-400 text-sm">Flexible tripod</div>
+          </div>
+        </li>
+        <li class="bg-gray-100 dark:bg-gray-700 rounded-xl shadow p-4 flex items-center gap-4">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=80&q=80" alt="Laptop" class="w-16 h-16 rounded-lg object-cover">
+          <div>
+            <div class="font-semibold">MacBook Pro</div>
+            <div class="text-gray-500 dark:text-gray-400 text-sm">Video editing & work</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="mb-4">
+      <h2 class="text-2xl font-bold mb-4 flex items-center gap-2"><span>Contact</span></h2>
+      <form class="space-y-4">
+        <div>
+          <label for="name" class="block mb-1 font-medium">Name</label>
+          <input type="text" id="name" name="name" class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800" placeholder="Your Name" required>
+        </div>
+        <div>
+          <label for="email" class="block mb-1 font-medium">Email</label>
+          <input type="email" id="email" name="email" class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800" placeholder="you@email.com" required>
+        </div>
+        <div>
+          <label for="message" class="block mb-1 font-medium">Message</label>
+          <textarea id="message" name="message" rows="4" class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800" placeholder="Your message..." required></textarea>
+        </div>
+        <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition">Send</button>
+      </form>
+    </section>
+  </main>
+  <footer class="text-center py-6 text-gray-500 dark:text-gray-400">
+    &copy; 2024 Nepali in Japan. All rights reserved.
+  </footer>
+  <script>
+    // Light/Dark mode toggle logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      if(document.documentElement.classList.contains('dark')) {
+        localStorage.theme = 'dark';
+      } else {
+        localStorage.theme = 'light';
+      }
+    });
+  </script>
+</body>
+</html>
