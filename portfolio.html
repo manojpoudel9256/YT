@@ -9,17 +9,28 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
             color: #222;
         }
         header {
             background: #2d3e50;
             color: #fff;
-            padding: 2rem 0;
+            padding: 2.5rem 0 1.5rem 0;
             text-align: center;
             opacity: 0;
             transform: translateY(-40px);
             animation: headerFadeIn 1.2s ease-out 0.2s forwards;
+            position: relative;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 16px rgba(45,62,80,0.10);
+            margin-bottom: 1rem;
+            background: #e0e0e0;
         }
         @keyframes headerFadeIn {
             to {
@@ -28,15 +39,15 @@
             }
         }
         main {
-            max-width: 800px;
+            max-width: 900px;
             margin: 2rem auto;
             background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            padding: 2.5rem 2rem;
         }
         section {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
@@ -45,37 +56,122 @@
             opacity: 1;
             transform: translateY(0);
         }
-        h1, h2 {
+        h1 {
+            margin-top: 0.5rem;
+            margin-bottom: 0.2rem;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+        h2 {
             margin-top: 0;
         }
         .section-title {
             color: #2d3e50;
             border-bottom: 2px solid #e0e0e0;
             padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6em;
+            font-size: 1.4rem;
         }
-        #projects ul li, #skills ul li {
-            transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .project-card {
             background: #f8f9fa;
-            margin-bottom: 0.5rem;
-            padding: 0.7rem 1rem;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+            display: flex;
+            flex-direction: column;
         }
-        #projects ul li:hover, #skills ul li:hover {
-            transform: scale(1.04) translateY(-2px);
+        .project-card:hover {
+            transform: scale(1.03) translateY(-4px);
+            box-shadow: 0 8px 24px rgba(45,62,80,0.13);
+        }
+        .project-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            background: #e0e0e0;
+        }
+        .project-content {
+            padding: 1rem 1.2rem 1.2rem 1.2rem;
+            flex: 1;
+        }
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+        .project-desc {
+            font-size: 0.97rem;
+            color: #444;
+        }
+        /* Skills with icons */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            list-style: none;
+            padding: 0;
+        }
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 0.6em 1em;
+            font-size: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+        .skill-item:hover {
+            transform: scale(1.07) translateY(-2px);
             box-shadow: 0 4px 16px rgba(45,62,80,0.10);
             background: #eaf6ff;
+        }
+        .skill-icon {
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+        }
+        /* Contact with icons */
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.7em;
+            margin-bottom: 0.7em;
+            font-size: 1.05rem;
+        }
+        .contact-icon {
+            width: 22px;
+            height: 22px;
+            display: inline-block;
         }
         @media (max-width: 600px) {
             main {
                 padding: 1rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="profile-img" />
         <h1>Manoj Poudel</h1>
         <p>Portfolio</p>
     </header>
@@ -85,24 +181,48 @@
             <p>Hello! My name is Manoj Poudel. I am currently living in Japan and studying at a vocational college here. I am passionate about learning new skills and building my career in technology.</p>
         </section>
         <section id="projects">
-            <h2 class="section-title">Projects</h2>
-            <ul>
-                <li>Project 1 - <em>Coming soon...</em></li>
-                <li>Project 2 - <em>Coming soon...</em></li>
-            </ul>
+            <h2 class="section-title">
+                <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#2d3e50"/><path d="M7 17V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 17h10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Projects
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Project 1" class="project-img" />
+                    <div class="project-content">
+                        <div class="project-title">Project 1</div>
+                        <div class="project-desc">A short description of your project goes here. You can update this with your real projects!</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Project 2" class="project-img" />
+                    <div class="project-content">
+                        <div class="project-title">Project 2</div>
+                        <div class="project-desc">Another project description. Replace this with your own work and achievements.</div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="skills">
-            <h2 class="section-title">Skills</h2>
-            <ul>
-                <li>Skill 1</li>
-                <li>Skill 2</li>
-                <li>Skill 3</li>
+            <h2 class="section-title">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#2d3e50"/><path d="M8 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Skills
+            </h2>
+            <ul class="skills-list">
+                <li class="skill-item"><svg class="skill-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#f7df1e"/><text x="6" y="17" font-size="10" fill="#222">JS</text></svg>JavaScript</li>
+                <li class="skill-item"><svg class="skill-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#61dafb"/><text x="5" y="17" font-size="10" fill="#222">React</text></svg>React</li>
+                <li class="skill-item"><svg class="skill-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#e34c26"/><text x="5" y="17" font-size="10" fill="#fff">HTML</text></svg>HTML5</li>
+                <li class="skill-item"><svg class="skill-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#264de4"/><text x="5" y="17" font-size="10" fill="#fff">CSS</text></svg>CSS3</li>
             </ul>
         </section>
         <section id="contact">
-            <h2 class="section-title">Contact</h2>
-            <p>Email: <em>your.email@example.com</em></p>
-            <p>LinkedIn: <em>Coming soon...</em></p>
+            <h2 class="section-title">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#2d3e50"/><path d="M4 8l8 6 8-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="6" width="16" height="12" rx="2" stroke="#fff" stroke-width="2"/></svg>
+                Contact
+            </h2>
+            <ul class="contact-list">
+                <li class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#2d3e50"/><path d="M4 8l8 6 8-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="6" width="16" height="12" rx="2" stroke="#fff" stroke-width="2"/></svg>Email: <em>your.email@example.com</em></li>
+                <li class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#0077b5"/><path d="M8 11v5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="8" r="1" fill="#fff"/><path d="M12 16v-3a2 2 0 0 1 4 0v3" stroke="#fff" stroke-width="2" stroke-linecap="round"/><rect x="4" y="4" width="16" height="16" rx="4" stroke="#fff" stroke-width="2"/></svg>LinkedIn: <em>Coming soon...</em></li>
+            </ul>
         </section>
     </main>
     <script>
